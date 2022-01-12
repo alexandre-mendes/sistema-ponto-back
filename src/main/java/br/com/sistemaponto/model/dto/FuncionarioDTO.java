@@ -6,6 +6,7 @@ public class FuncionarioDTO implements Serializable {
 
     private Long id;
     private String nome;
+    private EmpresaDTO empresa;
 
     public Long getId() {
         return id;
@@ -23,4 +24,11 @@ public class FuncionarioDTO implements Serializable {
         this.nome = nome;
     }
 
+    public EmpresaDTO getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(EmpresaDTO empresa) {
+        this.empresa = empresa;
+    }
 }

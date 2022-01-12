@@ -18,6 +18,9 @@ public class Funcionario implements Serializable {
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Cargo cargo;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Empresa empresa;
+
     public Long getId() {
         return id;
     }
@@ -41,4 +44,13 @@ public class Funcionario implements Serializable {
     public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
 }

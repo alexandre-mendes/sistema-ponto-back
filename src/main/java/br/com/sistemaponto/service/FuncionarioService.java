@@ -13,7 +13,6 @@ public class FuncionarioService {
     private FuncionarioRepository funcionarioRepository;
 
     public Funcionario criar(final Funcionario funcionario) {
-        funcionario.setNome(funcionario.getNome());
         return funcionarioRepository.save(funcionario);
     }
 
@@ -22,7 +21,6 @@ public class FuncionarioService {
     }
 
     public Funcionario atualizar(final Funcionario funcionario) {
-        funcionario.setNome(funcionario.getNome());
         return funcionarioRepository.save(funcionario);
     }
 

@@ -13,7 +13,6 @@ public class CargoService {
         private CargoRepository cargoRepository;
 
         public Cargo criar(final Cargo cargo) {
-            cargo.setDescricao(cargo.getDescricao());
             return cargoRepository.save(cargo);
         }
 
@@ -22,7 +21,6 @@ public class CargoService {
         }
 
         public Cargo atualizar(final Cargo cargo) {
-            cargo.setDescricao(cargo.getDescricao());
             return cargoRepository.save(cargo);
         }
 

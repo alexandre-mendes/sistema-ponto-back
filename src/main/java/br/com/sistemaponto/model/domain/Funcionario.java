@@ -2,7 +2,6 @@ package br.com.sistemaponto.model.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "funcionario")
@@ -13,8 +12,8 @@ public class Funcionario implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "nome-funcionario")
-    private String nomeFuncionario;
+    @Column(name = "nome")
+    private String nome;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Cargo cargo;
@@ -27,12 +26,12 @@ public class Funcionario implements Serializable {
         this.id = id;
     }
 
-    public String getNomeFuncionario() {
-        return nomeFuncionario;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeFuncionario(String nomeFuncionario) {
-        this.nomeFuncionario = nomeFuncionario;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Cargo getCargo() {

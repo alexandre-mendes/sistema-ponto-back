@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "/usuarios")
+@RequestMapping(path = "/cargos")
 @Api(value = "Cargo Controller")
 public class CargoController {
 
@@ -25,7 +25,7 @@ public class CargoController {
     private ModelMapper modelMapper;
 
     @PostMapping
-    @ApiOperation(value = "Cria um novo usuário", authorizations = {@Authorization(value = "Bearer")})
+    @ApiOperation(value = "Cria um novo cargo", authorizations = {@Authorization(value = "Bearer")})
     public CargoDTO criar(@RequestBody final CargoDTO dto) {
         final Cargo cargo = modelMapper.map(dto, Cargo.class);
         final Cargo cargoSalvo = cargoService.criar(cargo);
@@ -33,14 +33,14 @@ public class CargoController {
     }
 
     @GetMapping(path = "/{id}")
-    @ApiOperation(value = "Obtem usuário por ID", authorizations = {@Authorization(value = "Bearer")})
+    @ApiOperation(value = "Obtem cargo por ID", authorizations = {@Authorization(value = "Bearer")})
     public CargoDTO obter(@PathVariable final Long id) {
         final Cargo cargo = cargoService.obter(id);
         return modelMapper.map(cargo, CargoDTO.class);
     }
 
     @PutMapping
-    @ApiOperation(value = "Atualiza usuário", authorizations = {@Authorization(value = "Bearer")})
+    @ApiOperation(value = "Atualiza cargo", authorizations = {@Authorization(value = "Bearer")})
     public CargoDTO atualizar(@RequestBody final CargoDTO dto) {
         final Cargo cargo = modelMapper.map(dto, Cargo.class);
         final Cargo cargoAtualizado = cargoService.atualizar(cargo);
@@ -48,7 +48,7 @@ public class CargoController {
     }
 
     @DeleteMapping(path = "/{id}")
-    @ApiOperation(value = "Deleta usuário por ID", authorizations = {@Authorization(value = "Bearer")})
+    @ApiOperation(value = "Deleta cargo por ID", authorizations = {@Authorization(value = "Bearer")})
     public void deletar(@PathVariable final Long id) {
         cargoService.deletar(id);
     }

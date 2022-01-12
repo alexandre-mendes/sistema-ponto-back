@@ -2,10 +2,8 @@ package br.com.sistemaponto.service;
 
 import br.com.sistemaponto.exception.EntityNotFoundException;
 import br.com.sistemaponto.model.domain.Cargo;
-import br.com.sistemaponto.model.domain.Usuario;
 import br.com.sistemaponto.repository.CargoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,7 +13,7 @@ public class CargoService {
         private CargoRepository cargoRepository;
 
         public Cargo criar(final Cargo cargo) {
-            cargo.setDescricaoCargo(cargo.getDescricaoCargo());
+            cargo.setDescricao(cargo.getDescricao());
             return cargoRepository.save(cargo);
         }
 
@@ -24,7 +22,7 @@ public class CargoService {
         }
 
         public Cargo atualizar(final Cargo cargo) {
-            cargo.setDescricaoCargo(cargo.getDescricaoCargo());
+            cargo.setDescricao(cargo.getDescricao());
             return cargoRepository.save(cargo);
         }
 

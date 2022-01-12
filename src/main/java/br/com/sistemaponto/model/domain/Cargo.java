@@ -13,11 +13,11 @@ public class Cargo implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "descricao_cargo")
-    private String descricaoCargo;
+    @Column(name = "descricao")
+    private String descricao;
 
     @OneToMany(mappedBy = "cargo")
-    private List<Funcionario> funcionario;
+    private List<Funcionario> funcionarios;
 
     public Long getId() {
         return id;
@@ -27,19 +27,19 @@ public class Cargo implements Serializable {
         this.id = id;
     }
 
-    public String getDescricaoCargo() {
-        return descricaoCargo;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescricaoCargo(String descricaoCargo) {
-        this.descricaoCargo = descricaoCargo;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public List<Funcionario> getFuncionario() {
-        return funcionario;
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
     }
 
-    public void setFuncionario(List<Funcionario> funcionario) {
-        this.funcionario = funcionario;
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
     }
 }

@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class FuncionarioDTO implements Serializable {
 
     private Long id;
-    private String nomeFuncionario;
+    private String nome;
 
     public Long getId() {
         return id;
@@ -15,12 +15,12 @@ public class FuncionarioDTO implements Serializable {
         this.id = id;
     }
 
-    public String getNomeFuncionario() {
-        return nomeFuncionario;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeFuncionario(String nomeFuncionario) {
-        this.nomeFuncionario = nomeFuncionario;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
 }

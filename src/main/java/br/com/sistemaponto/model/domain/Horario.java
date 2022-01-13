@@ -3,7 +3,6 @@ package br.com.sistemaponto.model.domain;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "horario")
@@ -21,7 +20,7 @@ public class Horario implements Serializable {
     private Boolean aprovado;
 
     @Column(name = "aprovador")
-    private Usuario aprovador;
+    private UsuarioDTO aprovador;
 
     public Long getId() {
         return id;
@@ -47,11 +46,11 @@ public class Horario implements Serializable {
         this.aprovado = aprovado;
     }
 
-    public Usuario getAprovador() {
+    public UsuarioDTO getAprovador() {
         return aprovador;
     }
 
-    public void setAprovador(Usuario aprovador) {
+    public void setAprovador(UsuarioDTO aprovador) {
         this.aprovador = aprovador;
     }
 }
